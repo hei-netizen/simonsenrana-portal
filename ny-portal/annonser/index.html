@@ -452,8 +452,8 @@ if(inst&&!app){let ventende=null;addEventListener('beforeinstallprompt',e=>{e.pr
 } else if(inst) inst.remove();
 })();
 </script>
-<script>/* format-bytte: vis 1:1 eller 9:16 i samme kort (Jona 07.10) */
-document.querySelectorAll('figure.ad a[href*="_9x16.webp"]').forEach(function(a){var img=a.querySelector('img');if(!img)return;var sq=img.getAttribute('src'),tall=a.getAttribute('href');
-var t=document.createElement('div');t.className='fmt';t.innerHTML='<button type="button" class="on">1:1 Feed</button><button type="button">9:16 Story</button>';
-var b1=t.children[0],b2=t.children[1];b1.onclick=function(){img.src=sq;b1.classList.add('on');b2.classList.remove('on')};b2.onclick=function(){img.src=tall;b2.classList.add('on');b1.classList.remove('on')};a.after(t);});
+<script>/* format-bytte: 9:16 som standard, 1:1 ved klikk (Jona 27.10) */
+document.querySelectorAll('figure.ad a[href*="_1x1.webp"]').forEach(function(a){var img=a.querySelector('img');if(!img)return;var tall=img.getAttribute('src'),sq=a.getAttribute('href');
+var t=document.createElement('div');t.className='fmt';t.innerHTML='<button type="button" class="on">9:16 Story</button><button type="button">1:1 Feed</button>';
+var b1=t.children[0],b2=t.children[1];b1.onclick=function(){img.src=tall;b1.classList.add('on');b2.classList.remove('on')};b2.onclick=function(){img.src=sq;b2.classList.add('on');b1.classList.remove('on')};a.after(t);});
 </script></body></html>
